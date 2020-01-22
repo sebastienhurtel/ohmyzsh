@@ -63,21 +63,28 @@ ZSH_THEME="punctual"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  ansible
+  docker
+  docker-compose
+  docker-machine
+  emacs
   git
-  zsh-autosuggestions
-  yarn
-  web-search
+  git-extras
+  github
+  git-remote-branch
+  iterm2
   jsontools
-  macports
   node
-  osx
   python
   sudo
   thor
-  docker
-  zsh-syntax-highlighting
-  iterm2
   tmux
+  virtualenv
+  web-search
+  yarn
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zzcomplete
 )
 
 source $ZSH/oh-my-zsh.sh
