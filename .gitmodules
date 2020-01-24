@@ -8,8 +8,8 @@
     path = custom/plugins/zzcomplete
     url = git@github.com:zdharma/zzcomplete.git
 [submodule "custom/plugins/zui"]
-    path = custom/plugins/zui
-    url = git@github.com:zdharma/zui.git
+	path = custom/plugins/zui
+	url = git@github.com:zdharma/zui.git
 [submodule "custom/themes/punctual-zsh-theme"]
 	path = custom/themes/punctual-zsh-theme
 	url = git@github.com:dannynimmo/punctual-zsh-theme.git
