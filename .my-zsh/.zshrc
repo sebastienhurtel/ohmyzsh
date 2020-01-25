@@ -82,6 +82,7 @@ plugins=(
   virtualenv
   web-search
   yarn
+  zui
   zsh-autosuggestions
   zsh-syntax-highlighting
   zzcomplete
