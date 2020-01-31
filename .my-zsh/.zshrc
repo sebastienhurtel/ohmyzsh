@@ -67,7 +67,6 @@ plugins=(
   docker
   docker-compose
   docker-machine
-  emacs
   git
   git-extras
   github
