@@ -119,6 +119,7 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -larth"
 alias e="emacsclient -n"
 alias toclip="xclip -selection c"
+alias tmate="env -u TMUX tmate"
 #Syntax highlighting
 source /home/sebastien/.zsh/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
