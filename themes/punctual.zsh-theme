@@ -16,6 +16,7 @@ PUNCTUAL_SHOW_USER="${PUNCTUAL_SHOW_USER:-true}";
 PUNCTUAL_SHOW_HOSTNAME="${PUNCTUAL_SHOW_HOSTNAME:-true}";
 PUNCTUAL_SHOW_CURRENT_DIR="${PUNCTUAL_SHOW_CURRENT_DIR:-true}";
 PUNCTUAL_SHOW_GIT="${PUNCTUAL_SHOW_GIT:-true}";
+PUNCTUAL_SHOW_VENV="${PUNCTUAL_SHOW_VENV:-true}";
 
 PUNCTUAL_TIMESTAMP_COLOUR="${PUNCTUAL_TIMESTAMP_COLOUR:-reset}";
 PUNCTUAL_USER_COLOUR="${PUNCTUAL_USER_COLOUR:-blue}";
@@ -23,6 +24,7 @@ PUNCTUAL_ROOT_USER_COLOUR="${PUNCTUAL_ROOT_USER_COLOUR:-red}";
 PUNCTUAL_HOSTNAME_COLOUR="${PUNCTUAL_HOSTNAME_COLOUR:-green}";
 PUNCTUAL_CURRENT_DIR_COLOUR="${PUNCTUAL_CURRENT_DIR_COLOUR:-cyan}";
 PUNCTUAL_GIT_COLOUR="${PUNCTUAL_GIT_COLOUR:-magenta}";
+PUNCTUAL_VENV_COLOUR="${PUNCTUAL_VENV_COLOUR:-green}";
 
 PUNCTUAL_TIMESTAMP_FORMAT="${PUNCTUAL_TIMESTAMP_FORMAT:-%H:%M:%S}"; # see man strftime
 
@@ -54,7 +56,6 @@ ZSH_THEME_GIT_PROMPT_AHEAD="${ZSH_THEME_GIT_PROMPT_AHEAD:-${PUNCTUAL_GIT_SYMBOL_
 ZSH_THEME_GIT_PROMPT_BEHIND="${ZSH_THEME_GIT_PROMPT_BEHIND:-${PUNCTUAL_GIT_SYMBOL_BEHIND}}";
 ZSH_THEME_GIT_PROMPT_DIVERGED="${ZSH_THEME_GIT_PROMPT_DIVERGED:-${PUNCTUAL_GIT_SYMBOL_DIVERGED}}";
 
-
 punctualNewline () {
     echo '';
 }
@@ -83,7 +84,15 @@ punctualUser () {
 punctualHostname () {
     echo -n 'on';
     echo -n ' ';
-    punctualDecorate '%m' "${PUNCTUAL_HOSTNAME_COLOUR}";
+    punctualDecorate '%m' "${PUNCTUAL_VENV_COLOUR}";
+}
+
+punctualVenv () {
+    if (( ${+VIRTUAL_ENV} )); then
+      punctualDecorate $(virtualenv_prompt_info) "${PUNCTUAL_VENV_COLOUR}";
+    else
+      PUNCTUAL_SHOW_VENV="${PUNCTUAL_SHOW_VENV:-false}";
+   fi;
 }
 
 punctualCurrentDir () {
@@ -114,6 +123,7 @@ punctualPrompt () {
     echo -n "${PUNCTUAL_PROMPT}";
     echo -n "%{$reset_color%}";
     echo -n ' ';
+
 }
 
 
@@ -138,6 +148,9 @@ punctualBuildTheme () {
     fi;
     if [[ ${PUNCTUAL_SHOW_GIT} = true ]]; then
         punctualGitStatus;
+    fi;
+    if [[ ${PUNCTUAL_SHOW_VENV} = true ]]; then
+       punctualVenv;
     fi;
     punctualNewline;
     punctualPrompt;

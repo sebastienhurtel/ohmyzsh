@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+PUNCTUAL_SHOW_HOSTNAME=false;
 export ZSH="/home/sebastien/.zsh/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -71,7 +72,6 @@ plugins=(
   git-extras
   github
   git-remote-branch
-  iterm2
   jsontools
   node
   python
@@ -120,6 +120,7 @@ alias ll="ls -larth"
 alias e="emacsclient -n"
 alias toclip="xclip -selection c"
 alias tmate="env -u TMUX tmate"
+
 #Syntax highlighting
 source /home/sebastien/.zsh/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -143,3 +144,4 @@ zstyle ":completion:*:hosts" known-hosts-files ''
 # In menu, select items with +
 zmodload -i zsh/complist
 bindkey -M menuselect "+" accept-and-menu-complete
+
