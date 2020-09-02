@@ -1,0 +1,15 @@
+[submodule "custom/plugins/zsh-autosuggestions"]
+    path = custom/plugins/zsh-autosuggestions
+    url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "custom/plugins/zsh-syntax-highlighting"]
+    path = custom/plugins/zsh-syntax-highlighting
+    url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule "custom/plugins/zzcomplete"]
+    path = custom/plugins/zzcomplete
+    url = git@github.com:zdharma/zzcomplete.git
+[submodule "custom/plugins/zui"]
+    path = custom/plugins/zui
+    url = git@github.com:zdharma/zui.git
+[submodule "custom/themes/punctual-zsh-theme"]
+	path = custom/themes/punctual-zsh-theme
+	url = git@github.com:dannynimmo/punctual-zsh-theme.git
