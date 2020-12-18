@@ -13,3 +13,6 @@
 [submodule "custom/themes/punctual-zsh-theme"]
 	path = custom/themes/punctual-zsh-theme
 	url = git@github.com:dannynimmo/punctual-zsh-theme.git
+[submodule "custom/themes/powerlevel10k"]
+	path = custom/themes/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
