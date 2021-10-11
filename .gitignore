@@ -13,4 +13,6 @@ log/
 
 # editor configs
 .vscode
-.idea
+
+# personnal files
+local/
