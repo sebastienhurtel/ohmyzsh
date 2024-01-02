@@ -1,5 +1,8 @@
-# custom files
+# Custom files
 custom/
+
+# local files
+local/
 
 # temp files directories
 cache/
