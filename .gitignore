@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 # custom files
-custom/
-local/
+#custom/
 
-=======
->>>>>>> 7fa18e23 ([zsh] add my custom folder)
 # temp files directories
 cache/
 log/
